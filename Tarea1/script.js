@@ -32,9 +32,14 @@ function test(states) {
     }
     else if (action_result == "RIGHT") states[0] = "B";
     else if (action_result == "LEFT") states[0] = "A";
-    const timeoutId = setTimeout(function () { test(states); }, 100);
+    const timeoutId = setTimeout(function () { test(states); }, 1000);
     if (checkStates.length == 8) {
-        console.log("Estados obtenidos: ", checkStates)
+        document.getElementById("log").innerHTML += "<br>¡Se han visitado todos los estados!";
+        // Se imprimen los estados obtenidos
+        document.getElementById("log").innerHTML += "<br>Estados obtenidos: ";
+        for (let i = 0; i < checkStates.length; i++) {
+            document.getElementById("log").innerHTML += "<br>".concat(checkStates[i]);
+        }
         clearTimeout(timeoutId);
     }
 }
