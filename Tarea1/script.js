@@ -32,7 +32,7 @@ function test(states) {
     }
     else if (action_result == "RIGHT") states[0] = "B";
     else if (action_result == "LEFT") states[0] = "A";
-    const timeoutId = setTimeout(function () { test(states); }, 1000);
+    const timeoutId = setTimeout(function () { test(states); }, 250);
     if (checkStates.length == 8) {
         document.getElementById("log").innerHTML += "<br>¡Se han visitado todos los estados!";
         // Se imprimen los estados obtenidos
